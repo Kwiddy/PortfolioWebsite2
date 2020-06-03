@@ -63,14 +63,14 @@ function onStart () {
 			}
 
 			//	Posting entities
-			$.post("./add", {addEmpl:addEmpl , addJob:addJob, addDesc:addDesc, addURL:addURL, addImg:addImg});
+			$.post("../../../add", {addEmpl:addEmpl , addJob:addJob, addDesc:addDesc, addURL:addURL, addImg:addImg});
 
 			//	Fetching entities
-			let descresp = await fetch("./descList");
-			let jobresp = await fetch("./jobList");
-			let linkresp = await fetch("./linkList");
-			let imgresp = await fetch("./imgList");
-			let empresp = await fetch("./empList");
+			let descresp = await fetch("../../../descList");
+			let jobresp = await fetch("../../../jobList");
+			let linkresp = await fetch("../../../linkList");
+			let imgresp = await fetch("../../../imgList");
+			let empresp = await fetch("../../../empList");
 			let empbody = await empresp.text();
 			let descbody = await descresp.text();
 			let jobbody = await jobresp.text();
@@ -134,11 +134,11 @@ function onStart () {
 
 		try {
 
-			let descresp = await fetch("./descList");
-			let jobresp = await fetch("./jobList");
-			let linkresp = await fetch("./linkList");
-			let imgresp = await fetch("./imgList");
-			let empresp = await fetch("./empList");
+			let descresp = await fetch("../../../descList");
+			let jobresp = await fetch("../../../jobList");
+			let linkresp = await fetch("../../../linkList");
+			let imgresp = await fetch("../../../imgList");
+			let empresp = await fetch("../../../empList");
 			let empbody = await empresp.text();
 			let descbody = await descresp.text();
 			let jobbody = await jobresp.text();
@@ -231,11 +231,11 @@ window.addEventListener("load", async function () {
 
 	try {
 
-		let descresp = await fetch("./descList");
-		let jobresp = await fetch("./jobList");
-		let linkresp = await fetch("./linkList");
-		let imgresp = await fetch("./imgList");
-		let empresp = await fetch("./empList");
+		let descresp = await fetch("../../../descList");
+		let jobresp = await fetch("../../../jobList");
+		let linkresp = await fetch("../../../linkList");
+		let imgresp = await fetch("../../../imgList");
+		let empresp = await fetch("../../../empList");
 		let empbody = await empresp.text();
 		let descbody = await descresp.text();
 		let jobbody = await jobresp.text();
