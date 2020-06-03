@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="1042353776096-b40nc822i1clrtc12gc7tiu3g57hin85.apps.googleusercontent.com">
+
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--Other CSS-->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title> Janus </title>
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  <script src="index.js"></script>
+  <script src="https://apis.google.com/js/platform.js"></script> <!-- used to have "aysnc defer" at end of opening tab-->
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+</head>
+
+<body>
+
+  <div id="masthead">
+    <table style="width:100%">
+      <tr>
+        <th style="width:10%"> <button id="menubutton" class="transparentButton">
+          <ion-icon name="reorder" size="large" style="color:white; zoom:1.6;" onclick="revealMenu();"></ion-icon>
+        </button> </th>
+        <th style="width:90%"> <a class="navbar-brand" href="#" id="headerTitle"><img src="IMG_3383.PNG" id="logo" alt="logo"></a> <br></th>
+      </tr>
+    </table>
+  </div>
+
+  <nav class="navbar sticky-top navbar-dark" style="background-color:#242526" id="headMenu">
+    <div class="col-sm-2">
+      <input type="button" class="btn btn-dark" id="aboutButton" value="About Janus">
+    </div>
+    <div class="col-sm-6" id="headLeft">
+      <table style="width:100%;">
+        <tr>
+          <th><input type="text" placeholder="Search by Employer or Job..." id="headSearch">
+          <th id="sbuttonCol"><button type="button" id="searchbtn">Search All</button> </th>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-4" id="rightCol">
+        <table>
+          <tr>
+            <th><button type="button" class="btn btn-dark" id="newJob" onclick="toggle_hidden('postJob'); loggedCheck();">Post a Job</button></th>
+            <th><button id="Gsignin" class="g-signin2" data-onsuccess="onSignin" data-theme="light"></button>
+              <button onclick="signOut()" id="Gsignout" class="btn btn-dark">Sign out</button></th>
+          </tr>
+        </table>
+    </div>
+  </nav>
+
+    <form action="./add" method="post" id="submitEntity">
+      <div id="postJob">
+        <table style="width:80%">
+          <tr>
+            <th> <input type="text" placeholder="Enter an Employer..." class="headInput" id="addEmpl">
+              <input type="text" placeholder="Enter a Job Title..." class="headInput" id="addJob">
+              <input type="text" placeholder="Link your website..." class="headInput" id="addURL">
+            </th>
+            <th>&nbsp; &nbsp; &nbsp; </th>
+            <th> <textarea rows="8" cols="50" placeholder="Enter Job Description Here (max 200 words)..." id="addDesc" class="headInput"></textarea> </th>
+          </tr>
+        </table>
+        <input type='button' id="submit" value="Submit">
+      </div>
+    </form>
+
+  <div id="aboutCol">
+    <p> <b> <u> About Janus </u> </b> </p>
+    <p> Welcome to Janus, the job opportunities site specifically for students. </p>
+    <p> Sign into Google to autofill employer information when adding a job. If it is a specific job you're looking for, use the large searchbar above to find jobs with specific keywords. </p>
+    <br>
+    <p> <a href="#"> My Github </a> </p>
+    <p> <a href="README.html"> README.md </a> </p>
+    <p> <a href="ssindex.html"> Server-Side Documentation - navigate using the navbar on the right of the page</a> </p>
+    <br>
+    <p> <b> About the developer </b> </p>
+    <p> This section will be developed further at a later date.</p>
+  </div>
+
+  <div id="emptyMsg">
+    <div id="emptyCenter">
+      <p> <ion-icon name="arrow-dropup-circle" size="large"></ion-icon> <br> No jobs have been posted yet, be the first!</p>
+    </div>
+  </div>
+
+  <div id='postedJobs'></div>
+
+  <div id="hiddenImg"></div>
+
+  <!--jQuery, Popper.js, and Bootstrap JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
