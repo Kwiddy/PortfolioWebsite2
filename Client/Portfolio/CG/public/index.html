@@ -1,63 +1,180 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <title> CG Coursework 19/20</title>
         <meta charset="utf-8">
-    </head>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      
+        <title>Kai Widdeson - CG Project</title>
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="../../../assets/img/circle-favicon.png" rel="icon">
+        <link href="../../../assets/img/circle-favicon.png" rel="apple-touch-icon">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="../../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="../../../assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="../../../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+      
+        <!-- Template Main CSS File -->
+        <link href="../../../assets/css/style.css" rel="stylesheet">
+      
+        <!-- =======================================================
+        * Template Name: iPortfolio - v1.2.1
+        * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+          </head>
 
-    <body onload="main()" style="background-color: #363636; color: white;">
-        <table style="width:100%">
-            <tr>
-                <tr>
-                    <td>
-                        <canvas id="webgl" width="400" height="400">
+
+    <body onload="main()">
+        
+                <!-- ======= Mobile nav toggle button ======= -->
+        <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+        <!-- ======= Header ======= -->
+        <header id="header">
+            <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="../../../assets/img/profile-img/2.jpg" alt="" class="img-fluid rounded-circle">
+                <h1 class="text-light"><a href="index.html">Kai Widdeson</a></h1>
+                <div class="social-links mt-3 text-center">
+                <a href="https://github.com/Kwiddy" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/kai-widdeson" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul><li class="active"><a href="../../../index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+                <li><a href="#skills"><i class="bx bx-server"></i> Skills</a></li>
+                <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
+                <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+
+                </ul>
+            </nav><!-- .nav-menu -->
+            <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+            </div>
+        </header><!-- End Header -->
+
+        <main id="main">
+
+            <!-- ======= Breadcrumbs ======= -->
+            <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                <h2>WebGL Project Details</h2>
+                <ol>
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li>WebGL Project Details</li>
+                </ol>
+                </div>
+
+            </div>
+            </section><!-- End Breadcrumbs -->
+
+            <!-- ======= Portfolio Details Section ======= -->
+            <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+                <div class="portfolio-description" style="padding-top: 0%;">
+                    <p>
+                        For this assignment, I was tasked with creating an interactive 3D living room using solely WebGL (no three.js or similar allowed) with appropriate texturing, animations, and lighting.
+                    </p>
+                </div>
+                <table style="width: 100%">
+                    <tr>
+                        <th>
+                            <b>Camera Movement: </b>
+                            <ul>
+                                <li><b>Arrow Keys: </b> Rotate the camera</li>
+                                <li><b>WASD Keys: </b> Move the camera</li>
+                                <li><b>Z/X Keys: </b> Zoom in and out of the scene</li>
+                            </ul>
+                        </th>
+                        <th>
+                            <b>Animations: </b>
+                            <ul>
+                                <li><b>C: </b> Set the table</li>
+                                <li><b>P: </b> Move the pouffe</li>
+                                <li><b>T: </b> Turn on the TV</li>
+                            </ul>
+                        </th>
+                        <th>
+                            <b>Lighting Controls: </b>
+                            <ul>
+                                <li><b>L: </b> Increase General Scene Lighting</li>
+                                <li><b>K: </b> Decreases General Scene Lighting</li>
+                                <li><b>M: </b> Increase Lamp Light </li>
+                                <li><b>N: </b> Decrease Lamp Light </li>
+                            </ul>
+                        </th>
+                    </tr>
+                </table>
+                <center>
+                    <div style="background-color: #363636; padding: 2rem;">
+                        <canvas id="webgl" width="window.screen.width" height="400" style="border:1px solid #ffffff;">
                             Please use a browser that supports "canvas"
                         </canvas>
-                    </td>
-                    <td><p> 
-                        <b>Camera Movement: </b>
-                        <ul>
-                            <li><b>Arrow Keys: </b> use the arrow keys to rotate the camera around an origin</li>
-                            <li><b>WASD Keys: </b> use the WASD keys to move the camera around the scene</li>
-                            <li><b>Z/X Keys: </b> use the Z and X Keys to zoom in and out of the scene</li>
-                        </ul>
-                        <b>Animations: </b>
-                        <ul>
-                            <li><b>C: </b> Use the C key to set the table, this pulls out four chairs and builds four plate objects</li>
-                            <li><b>P: </b> Use the P key to move the pouffe to the other side of the sofa </li>
-                            <li><b>T: </b> Use the T key to turn on the TV</li>
-                        </ul>
-                        <b>Lighting Controls: </b>
-                        <ul>
-                            <li><b>L: </b> Increase General Scene Lighting to a maximum point (initial light settings are maximum) </li>
-                            <li><b>K: </b> Decreases General Scene Lighting to a minimum point (zero light) </li>
-                            <li><b>M: </b> Increase Lamp Light </li>
-                            <li><b>N: </b> Decrease Lamp Light </li>
-                        </ul>
-                        <b>Objects </b><i>(x15 Total, inc. 11 Animated)</i><b>: </b>
-                        <ul>
-                            <li>1x Table</li>
-                            <li>4x Chairs</li>
-                            <li>1x Sofa</li>
-                            <li>1x Lamp</li>
-                            <li>1x Pouffe</li>
-                            <li>1x TV</li>
-                            <li>1x TV Stand</li>
-                            <li>1x TV Remote</li>
-                            <li>4x Plates & Cutlery </li>
-                        </ul>
-            
-            
-                    </p></td>
-                </tr>
-            </tr>
-        </table>
+                    </div>
+                </center>
+            </div>
+            </section><!-- End Portfolio Details Section -->
+        </div>
+        </main><!-- End #main -->
 
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+            <div class="copyright">
+                <!-- &copy; Copyright <strong><span>iPortfolio</span></strong> -->
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+            </div>
+            </div>
+        </footer><!-- End  Footer -->
+
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="../../../assets/vendor/jquery/jquery.min.js"></script>
+        <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="../../../assets/vendor/php-email-form/validate.js"></script>
+        <script src="../../../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="../../../assets/vendor/counterup/counterup.min.js"></script>
+        <script src="../../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="../../../assets/vendor/venobox/venobox.min.js"></script>
+        <script src="../../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="../../../assets/vendor/typed.js/typed.min.js"></script>
+        <script src="../../../assets/vendor/aos/aos.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="../../../assets/js/main.js"></script>
+
+        <!-- WebGL Functionality Scripts -->
         <script src="./lib/webgl-utils.js"></script>
         <script src="./lib/webgl-debug.js"></script>
         <script src="./lib/cuon-utils.js"></script>
         <script src="./lib/cuon-matrix.js"></script>
         <script src="index.js"></script>
+
     </body>
 
 </html>
