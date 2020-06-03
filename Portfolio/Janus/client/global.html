@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="GET /"><span class="type-signature">(route) </span>GET /<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/</td>
+                            </tr>
+                            </table>
+                            Attempts a General GET request from the Webpage
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /auth/google"><span class="type-signature">(route) </span>GET /auth/google<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/auth/google</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request from GOOGLE OAUTH API through passport
+                          <h5>Authentication</h5>
+                          <p>This route requires Google and Passport authentication. The google authentication is required for getting profile information and the passport authentication is used in sessions intregration as described in the server-side section of README.md</p>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">302</td>
+            
+            
+            <td class="description last">If profile is found</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">If a manual GET request for /auth/google is made, by requesting the URL in the search engine, then the Google API will return a 400 error due to redirect_uri_mistmatch. This is because the URI in the request, /auth/google/callback, does not match the URIs authorized in the OAuth client</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line147">line 147</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /auth/google/callback"><span class="type-signature">(route) </span>GET /auth/google/callback<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/auth/google/callback</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request from GOOGLE OAUTH API Callback through passport
+                          <h5>Authentication</h5>
+                          <p>This route requires Google and Passport authentication, the passport integration is required for sessions integration with the site as described in the server-side section of the documentation in README.md</p>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">302</td>
+            
+            
+            <td class="description last">The resource requested has been redirected to the correct URL upon callback</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">If a manual GET request for /auth/google/callback is made, by requesting the URL in the search engine, then the Google API will return a 400 error due to invalid_request as a result of a missing required scope parameter</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /descList"><span class="type-signature">(route) </span>GET /descList<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/descList</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request to the list of job descriptions from the Webpage
+These job descriptions will be limited in size thanks to a throw error in index.js
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line53">line 53</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /empList"><span class="type-signature">(route) </span>GET /empList<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/empList</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request to the list of employers from the Webpage.
+This list of employers may partially contain account usernames instead of inputted employers, if an account username then the item will have "(verified)" next to it when posted.
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /imgList"><span class="type-signature">(route) </span>GET /imgList<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/imgList</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request for the list of profile images from the Webpage
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line77">line 77</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /jobList"><span class="type-signature">(route) </span>GET /jobList<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/jobList</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request to the list of job titles from the Webpage
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="GET /linkList"><span class="type-signature">(route) </span>GET /linkList<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/linkList</td>
+                            </tr>
+                            </table>
+                            Attempts a GET request for the list of links to jobs from the Webpage
+Each of these URLs should be in the correct form thanks to the regex testUrl function in index.js
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">If response is successful then the 200 OK code is returned</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="POST /add"><span class="type-signature">(route) </span>POST /add<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/add</td>
+                            </tr>
+                            </table>
+                            Attempts a POST to the webpage, this post sends all entities:
+employer, job title, job description, job link, and profile image.
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Creates a dummy job and attempts to post, sends 200 OK code if succesful response</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html">GET /</a></li><li><a href="global.html">GET /auth/google</a></li><li><a href="global.html">GET /auth/google/callback</a></li><li><a href="global.html">GET /descList</a></li><li><a href="global.html">GET /empList</a></li><li><a href="global.html">GET /imgList</a></li><li><a href="global.html">GET /jobList</a></li><li><a href="global.html">GET /linkList</a></li><li><a href="global.html">POST /add</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed May 01 2019 21:46:48 GMT+0100 (British Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
